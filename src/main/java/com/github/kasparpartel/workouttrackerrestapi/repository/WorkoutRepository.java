@@ -1,11 +1,9 @@
 package com.github.kasparpartel.workouttrackerrestapi.repository;
 
 import com.github.kasparpartel.workouttrackerrestapi.model.Workout;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-public interface WorkoutRepository {
-    List<Workout> findAll();
-
-    void save(Workout workout);
+@Repository
+public interface WorkoutRepository extends JpaRepository<Workout, Long> {
 }

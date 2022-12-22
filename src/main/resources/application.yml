@@ -1,0 +1,13 @@
+spring:
+
+  flyway:
+    enabled: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/workout_tracker
+    username: postgres
+    password: password
+
+#logging:
+# level:
+#    root: debug

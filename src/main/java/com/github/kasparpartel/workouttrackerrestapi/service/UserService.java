@@ -6,6 +6,7 @@ import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Data
@@ -19,5 +20,9 @@ public class UserService {
     public User addUser(User user) {
         userRepository.save(user);
         return user;
+    }
+
+    public Optional<User> getByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 }

@@ -21,7 +21,7 @@ import java.util.List;
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Table(name = "user")
+@Table(name = "app_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +33,9 @@ public class User {
 
     @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "age")
     private int age;
