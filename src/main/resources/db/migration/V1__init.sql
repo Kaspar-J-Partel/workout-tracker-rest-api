@@ -6,7 +6,8 @@ CREATE TABLE app_user
     email      VARCHAR(70) NOT NULL UNIQUE,
     age        INT,
     weight     DECIMAL(4, 1),
-    height     DECIMAL(4, 1)
+    height     DECIMAL(4, 1),
+    password   VARCHAR(30)
 );
 
 CREATE TABLE exercise
@@ -37,8 +38,8 @@ CREATE TABLE set
     workout_id  INT NOT NULL REFERENCES workout (id) ON DELETE CASCADE
 );
 
-INSERT INTO app_user (first_name, last_name, email, age, weight, height)
-VALUES ('Kaspar Johannes', 'Pärtel', 'kasparjohannes@gmail.com', 23, 76.1, 184.5);
+INSERT INTO app_user (first_name, last_name, email, age, weight, height, password)
+VALUES ('Kaspar Johannes', 'Pärtel', 'kasparjohannes@gmail.com', 23, 76.1, 184.5, '123456');
 
 INSERT INTO exercise (name, type, target, description, user_id)
 VALUES ('Pullup', 'strength', 'back', 'Pull up on a bar', 1);

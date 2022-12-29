@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -45,6 +46,12 @@ public class User {
 
     @Column(name = "height")
     private float height;
+
+    @Column(name = "password")
+    private String password;
+
+    @Transient
+    private String confirmPassword;
 
     @OneToMany(mappedBy = "user")
     private List<Workout> workouts;

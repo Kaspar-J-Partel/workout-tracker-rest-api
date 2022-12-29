@@ -17,12 +17,16 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public User addUser(User user) {
+    public Optional<User> getByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    public User registerNewUser(User user) {
         userRepository.save(user);
         return user;
     }
 
-    public Optional<User> getByEmail(String email) {
-        return userRepository.findByEmail(email);
-    }
 }
+
+// TODO Compare password and confirmPassword
+// TODO Password encoding
